@@ -1,8 +1,10 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <stdbool.h>
 
 int main(){
-    int i, n, j, found = 0;
+    int i, n, j;
+    bool found = false;
     printf("Enter the number of elements in the array : ");
     scanf("%d", &n);
     
@@ -16,22 +18,24 @@ int main(){
     for(i = 0; i < n - 1; i++){
         for(j = i + 1; j < n; j++){
             if(arr[i] == arr[j]){
-                found = 1;
+                found = true;
                 break;
             }
            
         }
-       if(found == 1)
+       if(found == true)
             break;
     }
     
-if(found == 1){
+if(found == true){
     printf("Duplicate found");
 }
 else{
     printf("Duplicate doesnot exists");
 }
 }
+
+
 
 
 example :- 
