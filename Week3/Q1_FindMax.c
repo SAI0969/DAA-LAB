@@ -1,33 +1,35 @@
 #include <stdio.h>
 
-int Find_Max(int arr[], int n){
-    int max = arr[0];
-    for (int i = 0 ; i < n; i++){
-        if(arr[i] > max){
-            max = arr[i];
-        }
-        
-    }
-    return max;
+int Find_Max(int arr[], int n) {
+   
+    if (n == 1)
+        return arr[0];
+
+    int max_of_rest = Find_Max(arr, n - 1);
+
     
+    if (arr[n - 1] > max_of_rest)
+        return arr[n - 1];
+    else
+        return max_of_rest;
 }
 
+int main() {
+    int n;
 
-int main(){
-    int i, n;
-    
-    printf("Enter the number of elements : ");
+    printf("Enter the number of elements: ");
     scanf("%d", &n);
-    
+
     int arr[n];
-    
-    for(i = 0; i < n ; i++){
-        printf("Enter the element %d : ", i);
+
+    for (int i = 0; i < n; i++) {
+        printf("Enter element %d: ", i + 1);
         scanf("%d", &arr[i]);
     }
 
     int max = Find_Max(arr, n);
-    printf("The max element is %d ", max);
+    printf("The max element is %d\n", max);
+
     return 0;
 }
 
