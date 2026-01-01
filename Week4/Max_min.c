@@ -61,6 +61,6 @@ int max = Maximum(arr, 0 , n - 1);
 printf("Maximum element is : %d", max);
 
 int min = Minimum(arr, 0 , n - 1);
-printf("\nMaximum element is : %d", min);
+printf("\nMimimum element is : %d", min);
 return 0;
 }
