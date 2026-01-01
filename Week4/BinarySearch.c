@@ -23,14 +23,17 @@ int main(){
 
 	int arr[n];
 
+
 	for (int i = 0; i < n; i++) {
 
     	printf("Enter element %d: ", i + 1);
         scanf("%d", &arr[i]);
     }
+    int key;
+    printf("Enter the element to search : ");
+    scanf("%d", &key);
 
-
-    result = BinarySearch(arr, 0, n - 1, key);
+    int result = BinarySearch(arr, 0, n - 1, key);
  	if (result == -1)
         printf("Element not found\n");
     else
@@ -38,4 +41,3 @@ int main(){
 
     return 0;
 }
-
